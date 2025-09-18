@@ -1,1 +1,15 @@
-
+mcp漏洞研究：
+找寻可以切入的攻击点，在
+《MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits》
+提出了三种旧攻击方式
+恶意代码执行（MCE）：攻击者让模型将恶意代码插入用户系统文件
+你用直白的恶意语句会比隐蔽的恶意语句成功率高
+远程访问控制（RAC）：攻击者诱导模型往用户的~/.ssh/authorized_keys文件中添加恶意SSH 密钥，直接获取对受害者系统的远程访问权限
+用MCP文件系统服务器创建/修改该文件
+凭据窃取（CT）：攻击者让模型搜索系统环境变量或文件（如tokens.txt），提取OpenAI API密钥、HuggingFace令牌等敏感信息
+一种新攻击
+检索代理欺骗攻击（RADE）
+用户后面想了解MCP相关内容，就会让AI（比如Claude）去自己的数据库里查“MCP”，还让AI“查到啥就按内容做”。这时候AI就会把藏在资料里的坏指令读出来，然后调用MCP的工具执行
+本文提到了一个工具MCPsafetyserver
+代码里是提到俩个agent，一个负责交互另一个负责分析。
+接下来想要做的就是先通过这个工具去执行扫描服务器，然后找到攻击点，自己再尝试
