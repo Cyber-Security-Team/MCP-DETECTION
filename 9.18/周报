@@ -13,6 +13,4 @@ mcp漏洞研究：
 本文提到了一个工具MCPsafetyserver
 代码里是提到俩个agent，一个负责交互另一个负责分析。
 接下来想要做的就是先通过这个工具去执行扫描服务器，然后找到攻击点，自己再尝试
-![image](9.18/758d504f975180bf20f6fbb011fd16a8.png)
-![Raw GitHub Image](https://github.com/Cyber-Security-Team/MCP-DETECTION/blob/main/9.18/758d504f975180bf20f6fbb011fd16a8.png)
-![](9.18/758d504f975180bf20f6fbb011fd16a8.png)
+<img src="https://raw.githubusercontent.com/Cyber-Security-Team/MCP-DETECTION/main/9.18/758d504f975180bf20f6fbb011fd16a8.png" width="210px">
