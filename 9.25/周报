@@ -1,1 +1,4 @@
 9.25
+《MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers》
+提出一个工具mcpbench去评判不同llm调用工具的能力
+主要从mcp真实环境出发，提出复杂的要求，将要求分成一个一个任务让不同大模型执行调用工具，最终任务执行：LLM 智能体（LLM Agent）执行任务。
