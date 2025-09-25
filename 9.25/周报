@@ -2,3 +2,14 @@
 《MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers》
 提出一个工具mcpbench去评判不同llm调用工具的能力
 主要从mcp真实环境出发，提出复杂的要求，将要求分成一个一个任务让不同大模型执行调用工具，最终任务执行：LLM 智能体（LLM Agent）执行任务。
+1. 左侧：真实世界的 MCP 服务器（Real-world MCP Servers）
+2. 任务生成：基于 LLM 的任务合成（LLM-based Task Synthesis）
+从 “真实世界 MCP 服务器” 出发，通过 “基于 LLM 的任务合成” 环节，生成 Tasks（任务）。。
+3. 任务执行：LLM 智能体（LLM Agent）执行任务
+生成的 Query（任务指令） 会被传递给 LLM Agent（大语言模型智能体）。。
+执行过程中，会产生 “Execution Results and Trajectory（执行结果与轨迹）”——“结果” 是任务最终输出（比如旅行规划的具体内容）；
+“轨迹” 是执行的步骤记录（比如先调用了哪个工具、后调用了哪个工具、工具返回了什么中间结果）。
+4. 评估：规则 + LLM 评判（Rule-based and LLM Judge）
+拿到 “执行结果与轨迹” 后，通过 “Rule-based and LLM Judge（基于规则 + 大语言模型的评判）” 环节，最终得出 Agent Performance（智能体表现）。
+规则评判：检查工具调用是否合规（比如有没有用不存在的工具、参数填错没）；
+LLM 评判：让另一个大语言模型（比如 GPT-4）当 “评委”，判断任务完成质量（比如是否满足 “避开雨天” 的要求、结果是否基于工具真实输出而非瞎编）。
